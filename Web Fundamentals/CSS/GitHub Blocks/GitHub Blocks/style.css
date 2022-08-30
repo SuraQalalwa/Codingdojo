@@ -1,0 +1,42 @@
+    .container{
+        background-color:#f8f9fa;
+        margin: 10px 400px 10px;
+        padding: 20px 20px;
+        text-align: center;
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-color: #f8f9fa;
+    }
+
+    .first{
+        width: 600px;
+        height: 200px;
+    background-color: #56c2e6;
+    border-color: #56c2e6;
+    margin: 10px auto;
+
+    }
+    .second{
+        width: 600px;
+        height: 200px;
+        background-color: #d89faa; 
+        border-color: #d89faa;
+        margin: 10px auto;
+    
+    }
+    .third{
+        width: 600px;
+        height: 200px;
+        background-color: white;
+        border-color: white;
+        margin: 10px auto;
+    
+    }
+    
+    .plus{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }

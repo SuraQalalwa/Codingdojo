@@ -1,0 +1,28 @@
+#try{
+    color:white;
+    background-color:#00d1b2;
+    border-radius: 50%;
+    border-color: #00d1b2;
+    box-shadow: 0;
+    font-size: 16px;
+}
+#do{
+    color:#00d1b2;
+    background-color: white;
+    border-radius: 50px;
+    border-color: #00d1b2;
+    box-shadow: 0;
+    font-size: 20px;
+    font-weight: bold;
+    width: 8%;
+    
+}
+#go{
+    color:white;
+    background-color: blue;
+    border-color: black;
+    box-shadow: 4px 2px 2px black;
+    width: 10%;
+    font-size: 20px;
+
+}
