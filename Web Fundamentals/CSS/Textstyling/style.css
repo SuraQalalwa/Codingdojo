@@ -1,0 +1,17 @@
+h1{
+    color: white;
+    background-color:black;
+font-weight: bold ;
+
+}
+h2{
+    color: white;
+    background-color: purple;
+    text-align: center;
+}
+h3 {
+    color: black;
+    background-color: aqua;
+    text-align: right;
+    text-decoration: underline;
+}
