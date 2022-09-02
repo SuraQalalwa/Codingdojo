@@ -11,79 +11,79 @@
     <header>
         <div id="title">DojoWeather
         </div>
-        <div id="lol">
-            <a href="#" onclick="alert('Loading weather report...')">Burbank</a>
-            <a href="#" onclick="alert('Loading weather report...')">Chicago</a>
-            <a href="#" onclick="alert('Loading weather report...')">Dallas</a>
+        <div >
+            <a href="#" onclick="alert('Loading weather report...')" style="color: white; text-decoration: none; margin-right: 45px;">Burbank</a>
+            <a href="#" onclick="alert('Loading weather report...')" style="color: white; text-decoration: none;margin-right: 45px;">Chicago</a>
+            <a href="#" onclick="alert('Loading weather report...')" style="color: white; text-decoration: none;">Dallas</a>
         </div>    
-            </header>
-    <div id="main">        
-            <nav>
-                <div>
-                    <p>San Jose</p>
-                </div>    
-                <div>
-                    <label>show temperature in</label>
-                    <select name="Temp" onchange="temperatureConverter()" >
-                        <option value="Celcius" id="Celcius" >°C</option>
-                        <option value="Farenheit" class="button">°F</option>
-                    </select>
-                </div>
-            </nav>
-            <section>
-                <div class="day1">
-                    <h2>Today</h2>
-                    <img src="some_rain.png" alt="some_rain" class="photo">
-                    <p>some rain</p>
+    </header>
+        <div id="main">        
+                <nav>
                     <div>
-                        <p class="convert">24</p> <p>°</p>
-                        <p class="convert">18</p> <p>°</p>
-                    </div>
-                </div>
-                <div class="day2">
-                    <h2>Tomorrow</h2>
-                    <img src="some_sun.png" alt="some_sun" class="photo"> 
-                    <p>some sun</p>
+                        <h1>San Jose</h1>
+                    </div>    
                     <div>
-                        <p class="convert">27</p><p>°</p>
-                        <p class="convert">19</p><p>°</p>
+                        <label>show temperature in</label>
+                        <select class="selector"  onchange="tempConverter(this)" >
+                            <option>°C</option>
+                            <option>°F</option>
+                        </select>
                     </div>
-                </div>
-                <div class="day3">
-                    <h2>Friday</h2>
-                    <img src="some_clouds.png" alt="some_clouds" class="photo">
-                    <p>some clouds</p>
+                </nav>
+                <section>
+                    <div class="day1">
+                        <h2>Today</h2>
+                        <img src="some_rain.png" alt="some_rain" class="photo">
+                        <p style="font-size: 20px ;">some rain</p>
+                        <div class="temp">
+                            <span style="color: red ;"id="temp1">24</span>
+                            <span style="color: blue ;" id="temp2">18</span>
+                        </div>
+                    </div>
+                    <div class="day2">
+                        <h2>Tomorrow</h2>
+                        <img src="some_sun.png" alt="some_sun" class="photo"> 
+                        <p style="font-size: 20px ;">some sun</p>
+                        <div class="temp">
+                            <span style="color:red;" id="temp3">27</span>
+                            <span style="color: blue ;" id="temp4">19</span>
+                        </div>
+                    </div>
+                    <div class="day3">
+                        <h2>Friday</h2>
+                        <img src="some_clouds.png" alt="some_clouds" class="photo">
+                        <p style="font-size: 20px ;">some clouds</p>
+                        <div class="temp">
+                            <span style="color: red ;" id="temp5">21</span>
+                            <span style="color: blue ;" id="temp6">16</span>
+                        </div>
+                    </div>
+                    <div class="day4">
+                        <h2>Saturday</h2>
+                        <img src="some_sun.png" alt="some_sun" class="photo">
+                        <p style="font-size: 20px ;">some sun</p>
+                        <div class="temp">
+                            <span style="color: red ;" id="temp7">26</span>
+                            <span style="color: blue ;" id="temp8">21</span>
+                        </div>
+                    </div>
+                </section>
+                <footer id="cookie">
                     <div>
-                        <p class="convert">21</p><p>°</p>
-                        <p class="convert">16</p><p>°</p>
+                        <img src="cookie.png" alt="cookie">
                     </div>
-                </div>
-                <div class="day4">
-                    <h2>Saturday</h2>
-                    <img src="some_sun.png" alt="some_sun" class="photo">
-                    <p>some sun</p>
                     <div>
-                        <p class="convert">26</p><p>°</p>
-                        <p class="convert">21</p><p>°</p>
+                        <p style="margin-right: 250px ;"><strong>Stop! Cookie time</strong>  <br>
+                            We use cookies (sadly not the edible ones) to personalize <br>
+                            content and ads, to provide social media features and to <br>
+                            analyse our traffc. <a href="#">Read more...</a></p>
                     </div>
-                </div>
-            </section>
-            <footer id="cookie">
-                <div>
-                    <img src="cookie.png" alt="cookie">
-                </div>
-                <div>
-                    <p><strong>Stop! Cookie time</strong>  <br>
-                        We use cookies (sadly not the edible ones) to personalize <br>
-                        content and ads, to provide social media features and to <br>
-                        analyse our traffc. <a href="#">Read more...</a></p>
-                </div>
-                <div>
-                    <button onclick="dojo('this')">I Accept</button>
-                </div>
-            </footer>
-    </div>    
-    
+                    <div>
+                        <button onclick="dojo('this')" >I Accept</button>
+                    </div>
+                </footer>
+        </div>    
+        
 <script src="script.js"></script>
 </body>
 </html>
