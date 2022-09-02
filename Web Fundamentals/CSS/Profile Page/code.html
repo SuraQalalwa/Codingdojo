@@ -2,60 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>My Profile Page</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E%22%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="style.css"> 
 </head>
 <body>
-    <div class="nav">
-        <h1 class="nav-title">Profile</h1>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">My Profile</a></li>
-            <li><a href="#">Find Connections</a></li>
-            <li><button class="btn">Sign Out</button></li>
-        </ul>
-    </div>
-    <div class="container"></div>
-    <div clasqs="box">
-        <div class="user-card">
-            <div class="header">
-                <img src="anne-s.jpg" alt="user-circle" class="user">
+    <div class="container">
+        <div class="header">
+            <div class="pop">
+            <ol>
+                <li>Profile</li>
+                <li>Home</li>
+                <li>My Profile</li>
+                <li> Find Connections</li>
+                <li><button style="color: #fff;background-color: #17a2b8;">Sign Out</button></li>
+            </ol>
             </div>
-            <div class="card-body">
-                <h1>Jane Doe</h1>
-                <h3><sub><img src="map-marker.png" alt="map-marker" class="map"></sub>  
-                Seattle</h3>
-                <p>Developer | Engineer | Problem Solver<br>
-                Master of shadows and the Internet!</p>
-                <p>
-                    <a href="#">
-                        <sub><img src="gear.png" alt="gear" class="gear"></sub> 
-                        edit profile
-                    </a>
-                </p>
+            
+        </div>
+        <div class="main">
+            <div class="leftside">
+                <div class="box1">
+                <div class="box1head">
+                    <img src="jane-m.jpg" alt="user" class="photo1">
+                </div>
+                <div>
+                    <h1>Jane Doe</h1>
+                    <h3><sub><img src="map-marker.png" alt="map" class="tok"></sub>Seattle</h3>
+                    <p>Developer | Engineer | Prolem Solver<br>Master of shadowes and the Internt!</p>
+                    <h5><sub><img src="gear.png" alt="gear" class="tok"></sub><span style="color: blue; text-decoration-line: underline;">edit profile</span> </h5>
+                </div>
+                <div class="box2">
+                    <div class="box2head">
+                <h2><span style="color: white;">Eduction</span></h2>
+                    </div>
+                <p><strong>Coding Dojo-Full Stack Bootcamp</strong> <br></p>
+                <p><span style="color: gray;">Dec 2019 - Mar 2020 </span> <br> Triple black belt in Python, MERN, and C#...</p>
+                </div>
+            </div>
+            </div>
+        <div class="rightside">
+            <div class="row1">
+                <div class="col">
+                    <span class="num">2</span>
+                    <strong>Connection Requests</strong>
+                </div> 
+                <div class="col-2">
+                    <div class="side-profile">
+                        <sub><img src="todd-s.jpg" alt="todd-s" class="photo"></sub>
+                        <p>Todd E</p>
+                    </div>
+                    <img src="accept-circle.png" alt="accept-circle" class="tick"><img src="close-circle.png" alt="close-circle" class="tick">
+                </div>
+                    <div class="col-2">
+                        <div class="side-profile">
+                            <sub><img src="phil-s.jpg" alt="phil-s" class="photo"></sub>
+                            <p>Phil K</p>
+                        </div>
+                        <img src="accept-circle.png" alt="accept-circle" class="tick"><img src="close-circle.png" alt="close-circle" class="tick">
+                    </div>
+            </div>
+            <div class="row2">
+                <div class="col"><span class="num">500+</span><strong> Your Connections</strong></div>
+                <div class="col-5"><sub> <img src="adrien-s.jpg" alt="adrien-s" class="photo"></sub> Adrien D</div>
+                <div class="col-5"><sub> <img src="anne-s.jpg" alt="anne-s" class="photo"> </sub> Anne J</div>
+                <div class="col-5"><sub> <img src="alayne-s.jpg" alt="alayne-s" class="photo"> </sub> Alayne T</div>
+                <div class="col-5"><sub><img src="arry-s.jpg" alt="arry-s" class="photo"> </sub> Arry Y</div>
+                <div class="col-6"><a href="">View More</a></div>    
             </div>
         </div>
-    </div>
-    <div class="box2">
-        <h2>Eduction</h2>
-        <p>Coding Dojo-Full Stack Bootcamp <br></p>
-        <p>Dec 2019 - Mar 2020 <br> Triple black belt in Python, MERN, and C#...</p>
-    </div>
-    <div class="row1">
-        <div class="col"><strong>Connection Requests</strong></div> 
-        <div class="col-2">Todd E<img src="todd-s.jpg" alt="todd-s" class="photo"><img src="accept-circle.png" alt="accept-circle"class="tick"><img src="close-circle.png" alt="close-circle" class="tick"></div>
-        <div class="col-2">Phil K<img src="phil-s.jpg" alt="phil-s" class="photo"><img src="accept-circle.png" alt="accept-circle"class="tick"><img src="close-circle.png" alt="close-circle" class="tick"></div>
-    </div>
-    <div class="row2">
-        <div class="col"><strong> Your Connections</strong></div>
-        <div class="col-5">Adrien D<img src="adrien-s.jpg" alt="adrien-s" class="photo">
-        <div class="col-5">Anne J<img src="anne-s.jpg" alt="anne-s"class="photo">
-        <div class="col-5">Alayne T<img src="alayne-s.jpg" alt="alayne-s"class="photo">
-        <div class="col-5">Arry Y<img src="arry-s.jpg" alt="arry-s"class="photo">
-        <div class="col-5"><a href="View More">View More</a></div>    
-    </div>
+    </div>        
+</div>
 </body>
 </html>
