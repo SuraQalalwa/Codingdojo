@@ -23,6 +23,5 @@ function add3()
 {
 
     counter3++;
-    like3
-    .innerText=counter3;
+    like3.innerText=counter3;
 }
