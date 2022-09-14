@@ -23,6 +23,6 @@ class User:
 
 
 user_1=User("Ali")
-print(user_1.account_balance.display_account_info())
-print(user_1.account_balance.take_deposit(100))
-print(user_1.account_balance.display_account_info())
+user_1.account_balance.display_account_info()
+user_1.account_balance.take_deposit(100)
+user_1.account_balance.display_account_info()
