@@ -1,0 +1,28 @@
+body{
+    padding: 0;
+    margin: 0 auto;
+    border: 2px solid black;
+    width: 40%;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+label{
+    margin-right: 40px;
+    
+}
+
+.submit{
+    background-color: #76a5af;
+    color: white;
+    margin-left: 350px;
+    box-shadow: 3px 3px black;
+
+}
+
+.option{
+    width: 200px;
+    text-align: center;
+}
