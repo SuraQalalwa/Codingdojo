@@ -9,9 +9,11 @@ def check():
 
 #2.http://localhost:5000 - should display 8 by 8 checkerboard
 
-@app.route('/4')
-def check_number_4():
-    return render_template("index.html")
+@app.route('/<rows>')
+def checker(rows):
+    return render_template("index.html", rows=int(rows))    
+
+
 
 #3. http://localhost:5000/(x)/(y) - should display x by y checkerboard
 @app.route('/<rows>/<columns>/<color1>/<color2>')

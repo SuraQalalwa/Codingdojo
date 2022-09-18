@@ -10,21 +10,14 @@
 <body>
     
 
-<!-- Second time through solution -->    
+<!-- Second time through solution --> 
+{% for x in range(rows//2): %}   
  <table>
         <tr>
             <td class="color1"></td>
             <td class="color2"></td>
             <td class="color1"></td>
             <td class="color2"></td>
-        </tr>
-        <tr >
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-        </tr>
-        <tr>
             <td class="color1"></td>
             <td class="color2"></td>
             <td class="color1"></td>
@@ -35,33 +28,15 @@
             <td class="color1"></td>
             <td class="color2"></td>
             <td class="color1"></td>
-        </tr>
-        <tr>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-        </tr>
-        <tr >
             <td class="color2"></td>
             <td class="color1"></td>
             <td class="color2"></td>
             <td class="color1"></td>
         </tr>
-        <tr>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-        </tr>
-        <tr >
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-        </tr>
+
     
     </table>
+    {% endfor %}
 </body>
 </html>
 
