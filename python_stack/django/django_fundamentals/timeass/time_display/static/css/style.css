@@ -1,0 +1,20 @@
+.title{
+    width: 20%;
+    border: 2px solid black;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 10px;
+    margin-left: 50px;
+}
+
+.time{
+    width: 30%;
+    border: 2px solid black;
+    text-align: center;
+    font-size: large;
+}
+
+.container{
+    margin-left: 500px;
+
+}
