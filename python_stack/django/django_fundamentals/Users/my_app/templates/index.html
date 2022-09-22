@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>  
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        {% for user in allusers %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email_address}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="show" method="post">
+    {% csrf_token %}
+    First Name <input type="text" name="first_name">
+    Last Name <input type="text" name="last_name">
+    Email <input type="text" name="email">
+    Age <input type="text" name="age">
+    <input type="submit" value="add">
+    </form>    
+    
+</body>
+</html>
