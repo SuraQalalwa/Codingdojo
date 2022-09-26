@@ -1,0 +1,229 @@
+Microsoft Windows [Version 10.0.22000.978]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>call C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\Scripts\activate
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja\manage.py", line 21, in <module>
+    main()
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja\manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\management\__init__.py", line 381, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\management\base.py", line 323, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\management\base.py", line 361, in execute
+    self.check()
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\management\base.py", line 387, in check
+    all_issues = self._run_checks(
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\management\base.py", line 377, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\checks\registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\checks\urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\core\checks\urls.py", line 23, in check_resolver
+    return check_method()
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\urls\resolvers.py", line 398, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\utils\functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\urls\resolvers.py", line 579, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\utils\functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\urls\resolvers.py", line 572, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Program Files\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja\Dojo_Ninja\urls.py", line 20, in <module>
+    path('',include('my_app.urls')),
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\urls\conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Program Files\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja\my_app\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja\my_app\views.py", line 12, in <module>
+    this_ninja = Ninja.objects.get(id=1)        # get an instance of an Author
+NameError: name 'Ninja' is not defined
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py makemigrations
+No changes detected
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, my_app, sessions
+Running migrations:
+  No migrations to apply.
+
+
+>>> Dojos.objects.all()
+<QuerySet []>
+
+
+
+>>> this_ninja = Dojos.objects.create(name = "Sura")
+>>> this_ninja.name
+'Sura'
+>>> this_ninja = Dojos.objects.create(name = "Amin")
+>>> this_ninja.name
+'Amin'
+>>> this_ninja = Dojos.objects.create(name = "Tareq")
+>>> this_ninja.name
+'Tareq'
+>>> this_ninja = Dojos.objects.create(name = "Hakam" city= "Jenin")
+  File "<console>", line 1
+    this_ninja = Dojos.objects.create(name = "Hakam" city= "Jenin")
+                                             ^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> this_ninja = Dojos.objects.create(name = "Hakam", city= "Jenin")
+>>> this_ninja = Dojos.objects.create(name = "Akram", city= "Jenin" , state="Palestine")
+>>> this_ninja = Dojos.objects.create(name = "Mahmoud", city= "Jenin" , state="Palestine")
+>>> this_ninja = Dojos.objects.create(name = "Hussam", city= "Jenin" , state="Palestine")
+>>> c= Dojos.objects.get(id=6)
+>>> c.delete()
+(1, {'my_app.Ninjas': 0, 'my_app.Dojos': 1})
+>>> c= Dojos.objects.get(id=7)
+>>> c.delete()
+(1, {'my_app.Ninjas': 0, 'my_app.Dojos': 1})
+>>> c= Dojos.objects.get(id=5)
+>>> c.delete()
+(1, {'my_app.Ninjas': 0, 'my_app.Dojos': 1})
+
+TypeError: Ninjas() got an unexpected keyword argument 'my_dojo'
+>>> Ninjas.objects.all()
+<QuerySet []>
+
+
+django.db.utils.IntegrityError: NOT NULL constraint failed: my_app_ninjas.dojo_id
+>>> my_ninja = Ninjas.objects.create(first_name="Will", last_name="Smith",dojo= Dojos.objects.get(id=1))
+>>> my_ninja = Ninjas.objects.create(first_name="Benny", last_name="Blanco",dojo= Dojos.objects.get(id=1))
+>>> my_ninja = Ninjas.objects.create(first_name="Dua", last_name="Lipa",dojo= Dojos.objects.get(id=1))
+>>> my_ninja = Ninjas.objects.create(first_name="FortySeven", last_name="Soul",dojo= Dojos.objects.get(id=2))
+>>> my_ninja = Ninjas.objects.create(first_name="Jucie", last_name="Wrld",dojo= Dojos.objects.get(id=2))
+>>> my_ninja = Ninjas.objects.create(first_name="Taylor", last_name="Swift",dojo= Dojos.objects.get(id=2))
+>>> my_ninja = Ninjas.objects.create(first_name="Rock", last_name="Smith",dojo= Dojos.objects.get(id=3))
+>>> my_ninja = Ninjas.objects.create(first_name="Bon", last_name="Iver",dojo= Dojos.objects.get(id=3))
+>>> my_ninja = Ninjas.objects.create(first_name="Ariana", last_name="Grande",dojo= Dojos.objects.get(id=3))
+>>> new_ninja=Ninjas.objects.filter(dojo=
+... new_ninja=Ninjas.objects.filter(dojo=Dojos.objects.get
+  File "<console>", line 2
+    new_ninja=Ninjas.objects.filter(dojo=Dojos.objects.get
+             ^
+SyntaxError: invalid syntax
+>>> new_ninja=Ninjas.objects.filter(dojo=Dojos.objects.get(id=1))
+>>> new_ninja.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'objects'
+>>> new_ninja=Ninjas.objects.get(dojo=Dojos.objects.get(id=1))
+
+>>> new_ninja=Ninjas.objects.filter(dojo=Dojos.objects.get(id=1))
+>>> new_ninja.objects.all()
+
+>>> exit()
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojos without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> exit
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, my_app, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojos without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 2
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, my_app, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja> python manage.py shell
+Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>  exit()
+  File "<console>", line 1
+    exit()
+IndentationError: unexpected indent
+>>> exit
+Use exit() or Ctrl-Z plus Return to exit
+>>> exit()
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py makemigrations
+Migrations for 'my_app':
+  my_app\migrations\0002_dojos_desc.py
+    - Add field desc to dojos
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, my_app, sessions
+Running migrations:
+  Applying my_app.0002_dojos_desc... OK
+
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja>
+(djangoPy3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\django\django_fundamentals\Dojo_Ninja> python manage.py shell
+Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> this_dojo = Dojos.objects.create(name = "Hussam", city= "Jenin" , stat="Palestine" , dsec="YUIY")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Dojos' is not defined
+>>> this_dojo = Dojos.objects.create(name = "Hussam", city= "Jenin" , stat="Palestine" , desc="YUIY")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Dojos' is not defined
+>>> this_dojo = Dojos.objects.create(name = "Hussam", city= "Jenin" , stat="Palestine" , desc="YUIY")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Dojos' is not defined
+>>> from my_app.models import Ninjas , Dojos
+>>> this_dojo = Dojos.objects.create(name = "Hussam", city= "Jenin" , stat="Palestine" , desc="YUIY")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\db\models\query.py", line 420, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\djangoPy3Env\lib\site-packages\django\db\models\base.py", line 501, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Dojos() got an unexpected keyword argument 'stat'
+>>> this_dojo = Dojos.objects.create(name = "Hussam", city= "Jenin" , state="Palestine" , desc="YUIY")
+>>>
