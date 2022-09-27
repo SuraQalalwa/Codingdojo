@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+
+<h1>{{book.title}}</h1>
+<h3>ID:{{book.id}}</h3>
+<h4>Description</h4>
+<p>{{book.description}}</p>
+<h2>Authors:</h2>
+{%for pub in book.authors.all%}
+<p>{{pub.first_name}}</p>
+{%endfor%}
+
+
+<form action="/authtobook/{{book.id}}" method="post">
+    {%csrf_token%}
+    <input type="hidden" name="bookid" value="{{book1.id}}">
+    <select name="authtobook">
+        {%for p in allauthor_exclude %}
+        <option value="{{p.id}}">{{p.first_name}}</option>
+        {%endfor%}
+    </select>
+    <input type="submit" value="add author">
+</form>
+</p>
+</body>
+</html>

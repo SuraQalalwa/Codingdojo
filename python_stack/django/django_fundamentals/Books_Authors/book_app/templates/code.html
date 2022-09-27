@@ -1,0 +1,36 @@
+8<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- AUTHORS FORM  -->
+    <form action="/showauthor" method="post">
+        <h2>Add an Author</h2>    
+        {% csrf_token %}
+        First Name: <input type="text" name="first_name"><br>
+        Last Name:<input type="text" name="last_name"><br>
+        Note:<input type="text" name="note"><br>
+        <input type="submit" value="add">
+    </form>
+    <!-- AUTHORS TABLE -->
+    <table border="1px">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    {%for x in allauthors%}
+        <tr>
+            <td>{{x.id}}</td>
+        <td>{{x.first_name}} {{x.last_name}} </td>
+        <td><a href="/authors/{{x.id}}">View</a></td>
+    </tr>
+    {%endfor%}
+    </table>
+
+</body>
+</html>
