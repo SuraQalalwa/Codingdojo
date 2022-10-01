@@ -1,0 +1,29 @@
+-- FULL Stack Developer     Front End (HTML, CSS, JS)       Back End ( Python, Java, C#, PHP)       Database 
+-- SQL Structured Query Language    
+-- Server: MySQL  MS SQL     Oracle     SQLLite3  POSGRADE 
+
+-- SQL: Analysis --> Design --> Implementation (Code) --> Testing --> Depolyment --> Maintenance
+-- SQL Design: ERD Diagram      Coding: CRUD operastions
+-- CRUD: 
+-- C Create    insert into
+-- R Read b    select
+-- U Update    update
+-- D Delete	   delete
+
+use twitter;
+select users.first_name,  tweets.tweet, tweets.created_at 
+from users  left join tweets
+on users.id = tweets.user_id
+
+-- we specify the columns names that we need, by mention the table name dot column name
+-- we mention: From the main table, then we use join  key word then we mention the name of the second table
+-- then we put the condition of conttecting: first table .primary key  = second table . foreign key
+
+
+
+\\\\\\\\\\\\\ INSERT
+INSERT INTO table_name (column_name1, column_name2) 
+VALUES('column1_value', 'column2_value');
+
+\\\\\\\\\\\\\\ UPDATE
+UPDATE table_name SET column_name1 = 'some_value', column_name2='another_value' WHERE condition(s)

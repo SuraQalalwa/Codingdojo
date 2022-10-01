@@ -1,0 +1,29 @@
+b.first_name='Bill'
+b.first_name
+'Bill'
+>>> b.save()
+>>> first_book=Book.objects.get(id=1)
+>>> first_author=Author.objects.get(id=1)
+>>> second_author=Author.objects.get(id=2)
+>>> third_author=Author.objects.get(id=3)
+>>> fourth_author=Author.objects.get(id=4)
+>>> second_book=Book.objects.get(id=2)
+>>> third_book=Book.objects.get(id=3)
+>>> fourth_book=Book.objects.get(id=4)
+>>> fifth_book=Book.objects.get(id=5)
+>>> first_author.books.add(first_book,second_book)
+>>> second_author.books.add(first_book,second_book,third_book)
+>>> third_author.books.add(first_book,second_book,third_book,fourth_book)
+>>> fourth_author.books.add(first_book,second_book,third_book,fourth_book,fifth_book)
+>>> third_book.authors.all()
+<QuerySet [<Author: Author object (2)>, <Author: Author object (3)>, <Author: Author object (4)>]>
+>>> third_book.authors.all
+third_book.authors.remove(second_author)
+third_book.authors.all()
+fifth_author=Author.objects.get(id=5)
+fifth_author.books.add(second_book)
+>>> third_author.books.all()
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>]>
+>>> fifth_book.authors.all()
+<QuerySet [<Author: Author object (4)>]>
+>>>

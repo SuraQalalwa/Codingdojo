@@ -1,0 +1,34 @@
+insert into dojos (name, created_at, updated_at)
+values ('Billie', now(), now()), ( 'Dua',now(), now()), ('The Weekend', now(), now())
+
+DELETE FROM dojos
+
+insert into dojos (name, created_at, updated_at)
+values ('Billie', now(), now()), ( 'Dua',now(), now()), ('The Weekend', now(), now())
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Adele', 'Pop', '25', now(),now(), '1'), ('Ann', 'South', '24', now(),now(),'1'), ('Pan', 'West', '26', now(),now(),'1')
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('World', 'Wide', '28', now(),now(), '2'), ('Emili', 'Navar', '25', now(),now(),'2'), ('Alin', 'Kio', '22', now(),now(),'2')
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Wide', 'Wide', '28', now(),now(), '3'), ('Klaric', 'Nava', '25', now(),now(),'2'), ('Alin', 'Kio', '22', now(),now(),'3')
+
+
+SELECT *
+FROM ninjas
+LEFT JOIN dojos
+ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 1;
+
+SELECT *
+FROM ninjas
+LEFT JOIN dojos
+ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 3;
+
+SELECT *
+FROM dojos
+where dojos.id = ( select dojo_id from ninjas order by dojo_id desc limit 1)
+

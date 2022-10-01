@@ -1,0 +1,97 @@
+Microsoft Windows [Version 10.0.22000.856]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip list
+Package                Version
+---------------------- -------
+mysql-connector-python 8.0.30
+pip                    21.2.3
+setuptools             57.4.0
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Program Files\Python310\python.exe -m pip install --upgrade pip' command.
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>python -m venv py3Env
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>call py3Env\Scripts\activate
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip list
+Package    Version
+---------- -------
+pip        21.2.3
+setuptools 57.4.0
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\py3Env\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>deactivate
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>call py3Env\Scripts\activate
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip install Django==2.2.4
+Collecting Django==2.2.4
+  Downloading Django-2.2.4-py3-none-any.whl (7.5 MB)
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>
+Collecting sqlparse
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>
+     |████████████████████████████████| 42 kB 375 kB/s
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>
+  Downloading pytz-2022.2.1-py2.py3-none-any.whl (500 kB)
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>
+Installing collected packages: sqlparse, pytz, Django
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>sktop\Codingdojo\python_stack\py3Env\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip list
+Package    Version
+---------- --------
+Django     2.2.4
+pip        21.2.3
+pytz       2022.2.1
+setuptools 57.4.0
+sqlparse   0.4.2
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\py3Env\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip freeze
+Django==2.2.4
+pytz==2022.2.1
+sqlparse==0.4.2
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip freeze>sura.txt
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip show Django
+Name: Django
+Version: 2.2.4
+Summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+Home-page: https://www.djangoproject.com/
+Author: Django Software Foundation
+Author-email: foundation@djangoproject.com
+License: BSD
+Location: c:\users\soraq\onedrive\desktop\codingdojo\python_stack\py3env\lib\site-packages
+Requires: sqlparse, pytz
+Required-by:
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip uninstall Django
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\soraq\onedrive\desktop\codingdojo\python_stack\py3env\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\soraq\onedrive\desktop\codingdojo\python_stack\py3env\lib\site-packages\django\*
+    c:\users\soraq\onedrive\desktop\codingdojo\python_stack\py3env\scripts\django-admin.exe
+    c:\users\soraq\onedrive\desktop\codingdojo\python_stack\py3env\scripts\django-admin.py
+Proceed (Y/n)? Y
+  Successfully uninstalled Django-2.2.4
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip show Django
+WARNING: Package(s) not found: Django
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip list
+Package    Version
+---------- --------
+pip        21.2.3
+pytz       2022.2.1
+setuptools 57.4.0
+sqlparse   0.4.2
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\py3Env\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>

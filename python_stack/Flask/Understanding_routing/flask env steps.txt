@@ -1,0 +1,81 @@
+Microsoft Windows [Version 10.0.22000.856]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\soraq>cd OneDrive
+
+C:\Users\soraq\OneDrive>cd Desktop
+
+C:\Users\soraq\OneDrive\Desktop>cd Codingdojo
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo>cd python_stack
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip list
+Package                Version
+---------------------- -------
+autopep8               1.7.0
+click                  8.1.3
+colorama               0.4.5
+Flask                  2.2.2
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+MarkupSafe             2.1.1
+mysql-connector-python 8.0.30
+pip                    21.2.3
+pycodestyle            2.9.1
+setuptools             57.4.0
+toml                   0.10.2
+Werkzeug               2.2.2
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Program Files\Python310\python.exe -m pip install --upgrade pip' command.
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>python -m venv py3Env
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>call C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack
+'C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>call py3Env\Scripts\activate
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip list
+Package    Version
+---------- -------
+pip        21.2.3
+setuptools 57.4.0
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\py3Env\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip install flask
+Collecting flask
+  Using cached Flask-2.2.2-py3-none-any.whl (101 kB)
+Collecting itsdangerous>=2.0
+  Using cached itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting click>=8.0
+  Using cached click-8.1.3-py3-none-any.whl (96 kB)
+Collecting Jinja2>=3.0
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting Werkzeug>=2.2.2
+  Using cached Werkzeug-2.2.2-py3-none-any.whl (232 kB)
+Collecting colorama
+  Using cached colorama-0.4.5-py2.py3-none-any.whl (16 kB)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.1.1-cp310-cp310-win_amd64.whl (17 kB)
+Installing collected packages: MarkupSafe, colorama, Werkzeug, Jinja2, itsdangerous, click, flask
+Successfully installed Jinja2-3.1.2 MarkupSafe-2.1.1 Werkzeug-2.2.2 click-8.1.3 colorama-0.4.5 flask-2.2.2 itsdangerous-2.1.2
+WARNING: You are using pip version 21.2.3; however, version 22.2.2 is available.
+You should consider upgrading via the 'C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack\py3Env\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>flask --version
+Python 3.10.0
+Flask 2.2.2
+Werkzeug 2.2.2
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>pip freeze
+click==8.1.3
+colorama==0.4.5
+Flask==2.2.2
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+Werkzeug==2.2.2
+
+(py3Env) C:\Users\soraq\OneDrive\Desktop\Codingdojo\python_stack>

@@ -20,7 +20,7 @@ def play(request):
             request.session['sum']+=randomnum
         context={
             'sum' : request.session['sum'],
-            'money_info' : "You entered a farm and earned {} gold.".format(randomnum)
+            'money_info' : f"You entered a farm and earned {randomnum} gold."
         }
         return render(request,'index.html',context)
     #CAVE

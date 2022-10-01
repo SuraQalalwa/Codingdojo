@@ -1,0 +1,45 @@
+1-INSERT into users(first_name, last_name,email, created_at, updated_at) values ('sura', 'qalalwa', 'ameenqalalwa@outlook.com','2022-07-17', '2020-07-15')
+2-select * from users;
+3-select email from users where id=1;
+4-select * from users where id=3;
+5- update users set last_name ='Pancakes' where id =3;
+6- delete from users where id =2;
+7-select first_name from users;
+8- select * from users order by first_name desc
+
+
+
+///////////////////////////////////////////////////
+insert into ninjas(first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('bird','table', '22', now(), now(), 1), ('bird','table', '22', now(), now(), 1), ('paul','frank', '25', now(), now(), 1)
+ ///////////////////////////
+SELECT *
+FROM ninjas
+LEFT JOIN dojos
+ON dojos.id= ninjas.dojo_id
+WHERE dojos.id = 1;
+////////////////
+
+SELECT *
+FROM ninjas
+LEFT JOIN dojos
+ON dojos.id= ninjas.dojo_id
+WHERE dojos.id = 3;
+
+
+
+\\\\\\\\\\\\\\\\
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);
+
+
+
+
+
+
+
+
+
+
+
+

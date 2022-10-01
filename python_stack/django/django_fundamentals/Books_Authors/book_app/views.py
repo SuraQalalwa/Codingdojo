@@ -2,6 +2,7 @@
 from django.shortcuts import render , HttpResponse , redirect 
 from .models import Book , Author
 from multiprocessing import context
+from django.contrib import messages
 
 # Create your views here.
 def method(request):
@@ -25,7 +26,13 @@ def showdataauthor(request):
     return redirect  ('/authors')
 
 def showdatabook(request):
-    Book.objects.create(
+    errors = Book.objects.basic_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect  ('/') 
+    else:
+        Book.objects.create(
         title=request.POST['title'],
         description=request.POST['description']
     )
@@ -52,7 +59,7 @@ def showauthor(request,id):
     Books = Book.objects.all()
     context={
         'author': reference,
-        'allbooks': Books,
+        'allbooks': Book.objects.all(),
         'allbook_exclude':Book.objects.exclude(id__in=reference.book.all())
     }
     return render(request,'code.html', context) 

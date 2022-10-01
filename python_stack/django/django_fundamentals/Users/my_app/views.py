@@ -16,3 +16,5 @@ def showdata(request):
     Users.objects.create(first_name=first_name,last_name=last_name,email_address=email_address,age=age)
 
     return redirect  ('/')
+
+    

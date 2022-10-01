@@ -1,22 +1,59 @@
-let result = document.getElementById("display");
+// let result = document.getElementById("display");
 
-let press =(number)=>{
-    result.value = result.value + number ;
+// let press =(number)=>{
+//     result.value = result.value + number ;
+// }
+
+// let calculate =()=>{
+//     try{
+//         result.value = eval(result.value)
+//     }
+//     catch(err){
+//         alert("NUN")
+
+//     }
+// }
+
+// function clr(){
+//     result.value = "";
+// }
+
+
+function press(number){
+
 }
 
-let calculate =()=>{
-    try{
-        result.value = eval(result.value)
-    }
-    catch(err){
-        alert("NUN")
+function operator
 
-    }
-}
 
-function clr(){
-    result.value = "";
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
