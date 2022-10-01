@@ -19,10 +19,10 @@
         {%csrf_token%}
         <a href="/shows">Go Back</a>
         <h1>Add a New Show</h1>
-        Title:<input type="text" name="title"> <br>
-        Network:<input type="text" name="network"><br>
-        Release Date:<input type="date" name="releasedate" ><br> 
-        Descritption:<input type="text" name="description"> <br>
+        Title:<input type="text" name="title" required> <br>
+        Network:<input type="text" name="network" required><br>
+        Release Date:<input type="date" name="releasedate" required ><br> 
+        Descritption:<input type="text" name="description" required> <br>
         <input type="submit" value="Create">
 
 </form>

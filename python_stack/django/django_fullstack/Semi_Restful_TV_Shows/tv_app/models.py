@@ -14,6 +14,17 @@ class BlogManager(models.Manager):
             errors["description"] = "Show description should be at least 10 characters"    
         return errors
 
+# class GeeksModel(Model):
+#     title = models.CharField(
+#                     max_length = 200,  
+#                     unique = True
+#                     ) 
+
+class Server( models.Model ):
+    title = models.GenericIPAddressField( blank = False, null = False, unique = True )
+
+
+
 class Show(models.Model):
     title = models.CharField(max_length=255)
     network=models.CharField(max_length=255)

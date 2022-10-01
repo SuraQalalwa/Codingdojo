@@ -17,11 +17,11 @@
     <a href="/shows">Go Back</a>
     <form action="/shows/{{edit.id}}/editme" method="post">
     {%csrf_token%}
-    <h1>Edit Show {{edit.id}} </h1> <input type="text" value="{{edit.id}}">
-    <h3>Title: </h3> <input type="text" value="{{edit.title}}" name="title">
-    <h3>Network: </h3> <input type="text" value="{{edit.network}}" name="network">
-    <h3>Release Date: </h3> <input type="date" value="{{edit.releasedate}}" name="releasedate">
-    <h3>Descritption: </h3>  <input type="text" value="{{edit.description}}" name="description">
+    <h1>Edit Show {{edit.id}} </h1> <input type="text" value="{{edit.id}}" required>
+    <h3>Title: </h3> <input type="text" value="{{edit.title}}" name="title" required>
+    <h3>Network: </h3> <input type="text" value="{{edit.network}}" name="network" required>
+    <h3>Release Date: </h3> <input type="date" value="{{edit.releasedate}}" name="releasedate" required>
+    <h3>Descritption: </h3>  <input type="text" value="{{edit.description}}" name="description" required>
     <h3>Update</h3> <input type="submit" value="Update">
     </form>
     <a href="/shows/{{edit.id}}">Go to Show</a>
