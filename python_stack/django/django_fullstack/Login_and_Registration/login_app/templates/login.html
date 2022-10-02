@@ -7,12 +7,36 @@
     <title>Login & Registration</title>
 </head>
 <body>
+    <div style="display:flex; justify-content: space-around; ">
+    <!-- Register -->
+    <form action="/register" method="POST">
+        {% csrf_token%}
     <h1>Registration</h1>
-    First Name: <input type="text" name="first_name" value="first_name">
-    Last Name: <input type="text" name="last_name" value="last_name">
-    Email: <input type="email" name="email" value="email">
-    Password: <input type="text" name="password" value="password">
-    Confirm PW: <input type="text" name="pw" value="pw">
-    <input type="submit" >
+    First Name: <input type="text" name="first_name"><br>
+    Last Name: <input type="text" name="last_name" ><br>
+    Email: <input type="email" name="email"><br>
+    Password: <input type="text" name="password"><br>
+    Confirm PW: <input type="text" name="cpassword"><br>
+    <input type="submit" value="Register" ><br>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </form><br>
+    
+
+    <!-- LOG IN -->
+    <form action="/login" method="POST">
+        {% csrf_token%}
+    <h1>Log In</h1>
+    Email: <input type="email" name="email"><br>
+    Password: <input type="text" name="password"><br>
+    <input type="submit" value="Log In">
+    </form>
+    </div>
+
 </body>
 </html>
