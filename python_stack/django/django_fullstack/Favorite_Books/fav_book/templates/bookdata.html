@@ -9,7 +9,7 @@
 <body>
     <h1>Welcome {{request.session.first_name}}</h1>.
     <a href="/logout">Log Out</a>
-
+    {%if request.session.userid == alldatabook.user.id %}
     <form action="/edit" method="post">
         {%csrf_token%}
     <input type="hidden" name="bookid" value="{{alldatabook.id}}">
@@ -26,7 +26,7 @@
         <input type="hidden" name="bookid" value="{{alldatabook.id}}">
         <input type="submit" value="delete" name="delete">
     </form>
-
+    {%endif%}
 
     <h2>Users who liked This Book</h2>
     <ul>
