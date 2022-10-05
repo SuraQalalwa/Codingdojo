@@ -61,6 +61,11 @@ def book(request):
 
 # CREATE NEW BOOK
 def create_book(request):
+    errors = Book.objects.add_book_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/book')
     user = User.objects.get(id=request.session['userid'])
     if request.method == 'POST':
         title = request.POST['title']

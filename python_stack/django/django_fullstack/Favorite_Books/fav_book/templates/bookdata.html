@@ -9,14 +9,14 @@
 <body>
     <h1>Welcome {{request.session.first_name}}</h1>.
     <a href="/logout">Log Out</a>
-    {%if request.session.userid == alldatabook.user.id %}
-    <form action="/edit" method="post">
-        {%csrf_token%}
-    <input type="hidden" name="bookid" value="{{alldatabook.id}}">
     <p>Title:</p><input type="text" name="title1" value="{{alldatabook.title}}">
     <p> Added by:{{alldatabook.user.first_name}}</p>
     <p>Added on:{{alldatabook.created_at}}</p> 
     <p>last updated on:{{alldatabook.updated_at}}</p>
+    {%if request.session.userid == alldatabook.user.id %}
+    <form action="/edit" method="post">
+        {%csrf_token%}
+    <input type="hidden" name="bookid" value="{{alldatabook.id}}">
     <p>Description:</p><input type="text" value="{{alldatabook.description}}" name="desc1"><br>
         <input type="submit" value="Update" name="update">
     </form>

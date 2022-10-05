@@ -12,9 +12,7 @@ class UserManager(models.Manager):
         if len(postData['last_name']) < 2:
             errors["last_name"] = "Show last_name should be at least 2 characters"
         if len(postData['email']) < 5:
-            errors["email"] = "Show email should be at least 5 characters" 
-        if len(postData['description']) < 5:
-            errors["description"] = "Show description should be at least 5 characters"        
+            errors["email"] = "Show email should be at least 5 characters"        
         if len(postData['password']) < 8:
             errors["password"] = "Password should be at least 8 characters" 
         if postData['password'] != postData['cpassword']:
@@ -22,7 +20,17 @@ class UserManager(models.Manager):
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')   
         if not EMAIL_REGEX.match(postData['email']):           
             errors['email'] = "Invalid email address!"
-        return errors    
+        return errors 
+
+class BookManager(models.Manager):
+    def add_book_validator(self,postData):
+        errors={}
+        if postData['title']== "":
+            errors['title']="Please Enter a Title For The Book"
+        if len(postData['description'])<5:
+            errors['description']="Please Enter a Valid Description Of The Book"
+        return errors
+
 
 class User(models.Model):
     first_name = models.CharField(max_length=45)
@@ -42,6 +50,6 @@ class Book(models.Model):
     users_who_liked = models.ManyToManyField(User, related_name="liked_books")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects = UserManager()
+    objects = BookManager()
     # uploaded_by = user who uploaded a given book
     # users_who_like = a list of users who like a given book
