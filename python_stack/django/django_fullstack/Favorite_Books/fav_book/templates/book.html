@@ -42,13 +42,13 @@
         {%for book in allbooks%}
         <a href="/books/{{book.id}}">{{book.title}}</a>
         <p>(added by {{book.user.first_name}})</p>
+        {%if book not in alldatauser.liked_books.all%}
+        <a href="/addfavorite/{{book.id}}">add to favorite</a>
+        {%else%}
+        <p>this one is my fav</p>
+        {%endif%}
         <hr>
         {%endfor%}
-        {%if alldatabook not in alldatauser.liked_books.all%}
-        <!-- <p>hi</p> -->
-        {%else%}
-        <a href="/favorite/{{alldatabook.id}}">add to favorite</a>
-        {%endif%}
     </form>
     </div> 
     </div>

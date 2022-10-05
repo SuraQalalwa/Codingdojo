@@ -79,7 +79,16 @@ def showbook(request,bookid):
     }
     return render (request,'bookdata.html',context)
 
-# ADD BOOK TO FAVORITE
+# ADD BOOK TO FAVORITE in Book Data Page
+def addfavorite(request,bookid):
+    print("HIIIIIIIIIIIIIIIIIi")
+    user= User.objects.get(id=request.session['userid'])
+    book = Book.objects.get(id=bookid)
+    user.liked_books.add(book)
+    print(book.users_who_liked)
+    return redirect('/book')
+
+# ADD BOOK TO FAVORITE in the main Page
 def favorite(request,bookid):
     print("HIIIIIIIIIIIIIIIIIi")
     user= User.objects.get(id=request.session['userid'])

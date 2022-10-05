@@ -11,6 +11,7 @@ urlpatterns=[
     path('logout',views.logout),
     path('create_book',views.create_book),
     path('favorite/<int:bookid>',views.favorite),
+    path('addfavorite/<int:bookid>',views.addfavorite),
     path('books/<int:bookid>',views.showbook),
     path('unfavorite/<int:bookid>',views.unfavorite),
     path('edit',views.edit),
