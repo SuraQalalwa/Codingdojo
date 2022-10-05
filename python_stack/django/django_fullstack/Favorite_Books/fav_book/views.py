@@ -98,12 +98,12 @@ def unfavorite(request,bookid):
 
 # EDIT BOOK DESCRIPTION
 def edit(request):
-    print("***********************$$$$$$$$$$$",request.POST['bookid'])
     bookid = request.POST['bookid']
     edit=Book.objects.get(id=bookid)
     edit.description= request.POST['desc1']
     edit.title= request.POST['title1']
     edit.save()
+    messages.success(request,"Update Complete!")
     return redirect('/books/'+str(bookid))
 
 # DELETE BOOK 
