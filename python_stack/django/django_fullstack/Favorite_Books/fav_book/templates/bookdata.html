@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome {{request.session.first_name}}</h1>.
+    <a href="/logout">Log Out</a>
+
+    <form action="/edit" method="post">
+        {%csrf_token%}
+    <input type="hidden" name="bookid" value="{{alldatabook.id}}">
+    <p>Title:</p><input type="text" name="title1" value="{{alldatabook.title}}">
+    <p> Added by:{{alldatabook.user.first_name}}</p>
+    <p>Added on:{{alldatabook.created_at}}</p> 
+    <p>last updated on:{{alldatabook.updated_at}}</p>
+    <p>Description:</p><input type="text" value="{{alldatabook.description}}" name="desc1"><br>
+        <input type="submit" value="Update" name="update">
+    </form>
+    
+    <form action="/delete" method="post">
+        {%csrf_token%}
+        <input type="hidden" name="bookid" value="{{alldatabook.id}}">
+        <input type="submit" value="delete" name="delete">
+    </form>
+
+
+    <h2>Users who liked This Book</h2>
+    <ul>
+
+        {%for x in alldatabook.users_who_liked.all%}
+        <li>{{x.first_name}} {{x.last_name}}</li>
+        {%endfor%}
+    </ul>
+        {%if alldatabook not in alldatauser.liked_books.all%}
+        <a href="/favorite/{{alldatabook.id}}">add to favorite</a>
+        {%else%}
+        <a href="/unfavorite/{{alldatabook.id}}">remove from favorite</a>
+        {%endif%}
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <title>Login & Registration</title>
+</head>
+<body>
+    <!-- Register -->
+    <div class="container" style="display:flex; justify-content: space-around;">
+    <div class="col col-md-6">
+    <form action="/register" method="POST">
+        {% csrf_token%}
+    <h1>Registration</h1>
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="first_name"><br></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="last_name" ></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>Confirm PW:</td>
+            <td><input type="password" name="cpassword"><br></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Register" >
+    <!-- for validation -->
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </form><br>
+    <!-- LOG IN -->
+    <div class="col">
+    <form action="/login" method="POST">
+        {% csrf_token%}
+    <h1>Log In</h1>
+    <table>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="email" name="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="password" name="password">  
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Log In">
+    </form>
+    </div>
+</div>
+</body>
+</html>

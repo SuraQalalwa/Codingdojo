@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <title>Favorite Books</title>
+</head>
+<body>
+    <div style="display:flex; justify-content:space-between ;">
+    <h1>Welcome {{request.session.first_name}}</h1>
+    <a href="/logout">Log Out</a>
+    </div>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div style="display: flex; justify-content:space-between ;">
+    <form action="/create_book" method="post">
+        {% csrf_token%}
+        <h2>Add a Favorite Book</h2>
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" name="title" required></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+        </table>
+        <input type="submit" name="addabook" value="Add">
+    </form>   
+    <div style="margin-right: 500px;">
+
+        <h3>All Books</h3>
+        <form action="favorite/{{book.id}}" method="post">
+        {%for book in allbooks%}
+        <a href="/books/{{book.id}}">{{book.title}}</a>
+        <p>(added by {{book.user.first_name}})</p>
+        <hr>
+        {%endfor%}
+        {%if alldatabook not in alldatauser.liked_books.all%}
+        <!-- <p>hi</p> -->
+        {%else%}
+        <a href="/favorite/{{alldatabook.id}}">add to favorite</a>
+        {%endif%}
+    </form>
+    </div> 
+    </div>
+
+
+</body>
+</html>
