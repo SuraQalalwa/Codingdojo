@@ -6,10 +6,10 @@ public class AlfredQuotes {
         return "Hello, lovely to see you. How are you?";
     }
 
-//    public String guestGreeting(String name) {
+   public String guestGreeting(String name) {
         // YOUR CODE HERE
-//        return (string.format("Hello %s.Lovely to see you.", name));
-//    }
+       return (String.format("Hello %s.Lovely to see you.", name));
+   }
 
     public String dateAnnouncement() {
         // YOUR CODE HERE
