@@ -15,6 +15,7 @@ public class AlfredQuotes {
         // YOUR CODE HERE
         Date date = new Date();
         return "It is currently" + date;
+        
     }
 
     public String respondBeforeAlexis(String conversation) {
