@@ -15,13 +15,10 @@ class CastException{
                 System.out.println("Error");
                 System.out.println(i);
                 System.out.println(e);
-
+                System.out.println(myList.get(i));
             }
 
         }
-
-
-
 
     }
 
