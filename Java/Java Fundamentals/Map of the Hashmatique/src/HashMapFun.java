@@ -10,10 +10,10 @@ public class HashMapFun {
 
         // get the keys by using the keySet method
         Set<String> keys = trackList.keySet();
-        for(String key : keys) {
+        for (String key : keys) {
 //            System.out.println(key);
 //            System.out.println(trackList.get(key));
-            System.out.println("Track: "+ trackList.get(key) + " Lyrics: "+ key ) ;
+            System.out.println("Track: " + trackList.get(key) + " Lyrics: " + key);
         }
     }
 }

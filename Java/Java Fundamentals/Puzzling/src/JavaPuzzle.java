@@ -46,6 +46,7 @@ public class JavaPuzzle {
                 }
                 newPass.add(word);
             }
+            
         return newPass;
     }
     }
