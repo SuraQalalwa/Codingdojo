@@ -4,6 +4,7 @@ import java.util.Objects;
 public class CoffeeKiosk {
     public ArrayList<Item> menu = new ArrayList<Item>();
     public ArrayList<Orders> orders = new ArrayList<Orders>();
+    String itemNumber = System.console().readLine();
 
 
     public void addMenuItem(String name, double price, int index) {
@@ -32,8 +33,7 @@ public class CoffeeKiosk {
             System.out.println(i + " " + menu.get(i).getName()+"-- $"+menu.get(i).getPrice());
         }
             // Prompts the user to enter an item number
-        System.out.println("Please enter a menu item index or q to quit:");
-        String itemNumber = System.console().readLine();
+
 
         // Write a while loop to collect all user's order items
         while(!itemNumber.equals("q")) {
