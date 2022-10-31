@@ -1,0 +1,13 @@
+body{
+    /*margin: auto 0px;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+h2 {
+    color: blue;
+}
+
