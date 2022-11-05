@@ -9,21 +9,17 @@ import java.util.Optional;
 
 @Service
 public class TravelService {
-    // adding the book repository as a dependency
     private final TravelRepository travelRepository; //related to dependency injection
 
     public TravelService(TravelRepository travelRepository) { //here we inject the service dependency in repository dependency
         this.travelRepository = travelRepository;
     }
-    // returns all the books
     public List<Travel> allTravels() {
         return travelRepository.findAll();
     }
-    // creates a book
     public Travel createTravel(Travel b) {
         return travelRepository.save(b);
     }
-    // retrieves a book
     public Travel findTravel(Long id) {
         Optional<Travel> optionalTravel = travelRepository.findById(id); // optional since it may not find nothing and to do not have error
         if(optionalTravel.isPresent()) {
