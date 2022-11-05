@@ -50,6 +50,9 @@ public class TravelService {
     public void deleteTravel(Long id) {
         travelRepository.deleteById(id);
     }
+
+    public void updateTravel(Travel travel, Long id) {
+    }
 }
 // find all
 // find by id

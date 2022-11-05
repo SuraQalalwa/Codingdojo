@@ -3,6 +3,7 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 @Entity
@@ -12,10 +13,10 @@ public class Travel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-//    @Size(min = 5, max = 200)
+    @Size(min = 2, max = 200)
     private String expense;
     @NotNull
-//    @Size(min = 5, max = 200)
+    @Size(min = 2, max = 200)
     private String vendor;
     @NotNull
     @Min(0)

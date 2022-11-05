@@ -4,59 +4,70 @@ import com.example.savetravels.mvc.models.Travel;
 import com.example.savetravels.mvc.services.TravelService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 @Controller
 public class TravelController {
-    // we can use this insted
-//    @Autowired
+    // we can use @Autowired
     private final TravelService travelService;
     public TravelController(TravelService travelService){
         this.travelService = travelService;
     }
-
+    // Get to show all
     @GetMapping("/travels")
-    public String allTravel(Model model){
+    public String allTravel(Model model,@ModelAttribute("travel") Travel travel){
         List<Travel> Travel = travelService.allTravels();
         model.addAttribute("travels", Travel);
         return "index.jsp";
     }
-    @RequestMapping("/travels/{travelid}")
-    public String show(Model model,@PathVariable(value = "travelid") Long id){
-        Travel Travel = travelService.findTravel(id);
-        model.addAttribute("travels", Travel);
+    //Put to edit
+    @GetMapping ("/{id}/edit")
+    public String edit(@PathVariable("id") Long id, Model model) {
+        Travel travel = travelService.findTravel(id);
+        model.addAttribute("travel", travel);
+        return "edit.jsp";
+    }
+    @PutMapping("/{id}/edit")
+    public String update(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,
+                         @PathVariable("id")Long id) {
+        if (result.hasErrors()) {
+            return "edit.jsp";
+        } else {
+            travelService.updateTravel(travel, id);
+            return "redirect:/travels";
+        }
+    }
+    //Post to create new one
+    @PostMapping("/travels/{id}")
+    public String addNew(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,Model model) {
+        if (result.hasErrors()) {
+            List<Travel> tra = travelService.allTravels();
+            model.addAttribute("travel", tra);
+            return "index.jsp";
+        }
+        else {
+            travelService.createTravel(travel);
+            return "redirect:/travels";
+        }
+    }
+    // Delete
+    @DeleteMapping("/{id}/delete")
+    public String destroy(@PathVariable("id") Long id) {
+        travelService.deleteTravel(id);
+        return "redirect:/travels";
+    }
+    // Request to show specific one details
+    @RequestMapping("/travel/{id}")
+    public String show(@PathVariable("id") Long id, Model model){
+        Travel travel = travelService.findTravel(id);
+        model.addAttribute("travel", travel);
         return "show.jsp";
     }
-    @PostMapping("/addtravel")
-    public String addTravel(Model model,
-                            @PathVariable("id") Long id,
-                            @RequestParam(value="expense") String expense,
-                            @RequestParam(value="vendor") String vendor,
-                            @RequestParam(value="amount") double amount){
-
-        Travel travel= new Travel(expense,vendor,amount);
-        travelService.createTravel(travel);
-//        model.addAttribute("travel", travel);
-        return "redirect:/travels/new";
-    }
-
-    @GetMapping("/travels/new")
-    public String newTravel(@ModelAttribute("travel") Travel travel) {
-        return "index.jsp";
-    }
-
-//    @Autowired
-//    BookService bookService;
-//    @GetMapping("/books")
-//    public String index(){
-//        return "index.jsp";
-//    }
-//    @GetMapping("/api/books")
-//    public List<Book> test(){
-////        System.out.println(id);
-////        Book Book = bookService.findBook(id);
-////        System.out.println(Book);
-//        return bookService.allBooks();
-//    }
 }
+
+
+
+
