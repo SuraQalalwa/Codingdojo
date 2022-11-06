@@ -18,7 +18,7 @@ public class TravelsApi {
         return travelService.allTravels();
     }
 
-    @RequestMapping(value="/api/travels", method= RequestMethod.POST)
+    @PostMapping("/api/travels")
     public Travel create(@RequestParam(value="expense") String expense,
                        @RequestParam(value="vendor") String vendor,
                        @RequestParam(value="amount") double amount) {
@@ -26,7 +26,7 @@ public class TravelsApi {
         return travelService.createTravel(travel);
     }
 
-    @RequestMapping("/api/books/{id}")
+    @RequestMapping("/api/travels/{id}")
     public Travel show(@PathVariable("id") Long id) {
         Travel travel = travelService.findTravel(id);
         return travel;

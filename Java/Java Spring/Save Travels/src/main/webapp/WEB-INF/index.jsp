@@ -30,7 +30,7 @@
             <td><a href="/travel/${travel.id}"><c:out value="${travel.expense}"></c:out><a/></td>
             <td><c:out value="${travel.vendor}"></c:out></td>
             <td>$ <c:out value="${travel.amount}"></c:out></td>
-            <td><a href="/${travel.id}/edit">edit</a>
+            <td><a href="/travels/${travel.id}/edit">edit</a>
             <td><form action="/${travel.id}/delete" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Delete">
@@ -43,6 +43,7 @@
 <h1>Add an Expense</h1>
 <table class="table col-6">
 <%--@elvariable id="travel" type=""--%>
+<%--    modelAttribute="travel" to connect between the fron and back end--%>
 <form:form action="/travels" method="post" modelAttribute="travel">
     <div>
         <form:label path="expense">Expense Name</form:label>
@@ -57,7 +58,7 @@
     <div>
         <form:label path="amount">Amount</form:label>
         <form:errors path="amount"/>
-        <form:input path="amount"/>
+        <form:input path="amount" />
     </div>
     <input type="submit" value="Submit"/>
 </form:form>

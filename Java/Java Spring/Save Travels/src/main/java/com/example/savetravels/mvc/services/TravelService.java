@@ -47,7 +47,8 @@ public class TravelService {
         travelRepository.deleteById(id);
     }
 
-    public void updateTravel(Travel travel, Long id) {
+    public Travel updateTravel(Travel travel) {
+        return travelRepository.save((travel));
     }
 }
 // find all

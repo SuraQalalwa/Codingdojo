@@ -4,7 +4,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="travels")
@@ -29,9 +28,6 @@ public class Travel {
     private Date updatedAt;
 
     public Travel(String expense, String vendor, double amount) {
-//
-//    }
-//    public Travel(String expense, String vendor,int amount) {
         this.setExpense(expense);
         this.setVendor(vendor);
         this.setAmount(amount);

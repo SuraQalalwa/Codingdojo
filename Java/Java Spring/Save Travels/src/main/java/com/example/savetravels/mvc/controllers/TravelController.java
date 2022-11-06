@@ -23,29 +23,12 @@ public class TravelController {
         model.addAttribute("travels", Travel);
         return "index.jsp";
     }
-    //Put to edit
-    @GetMapping ("/{id}/edit")
-    public String edit(@PathVariable("id") Long id, Model model) {
-        Travel travel = travelService.findTravel(id);
-        model.addAttribute("travel", travel);
-        return "edit.jsp";
-    }
-    @PutMapping("/{id}/edit")
-    public String update(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,
-                         @PathVariable("id")Long id) {
-        if (result.hasErrors()) {
-            return "edit.jsp";
-        } else {
-            travelService.updateTravel(travel, id);
-            return "redirect:/travels";
-        }
-    }
     //Post to create new one
-    @PostMapping("/travels/{id}")
-    public String addNew(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,Model model) {
+    @PostMapping("/travels")
+    public String create(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,Model model) {
         if (result.hasErrors()) {
-            List<Travel> tra = travelService.allTravels();
-            model.addAttribute("travel", tra);
+            List<Travel> Travel = travelService.allTravels();
+            model.addAttribute("travels", Travel);
             return "index.jsp";
         }
         else {
@@ -53,6 +36,26 @@ public class TravelController {
             return "redirect:/travels";
         }
     }
+    //Put to edit
+    @GetMapping ("travels/{id}/edit")
+    public String edit(@PathVariable("id") Long id, Model model) {
+        Travel travel = travelService.findTravel(id);
+        model.addAttribute("travel", travel);
+        return "edit.jsp";
+    }
+    @PutMapping("travels/{id}")
+    public String update(@Valid @ModelAttribute("travel") Travel travel, BindingResult result,
+                         @PathVariable("id")Long id) {
+//        BindingResult result a container to recaive validation
+        if (result.hasErrors()) {
+            return "edit.jsp";
+        }
+        else {
+            travelService.updateTravel(travel);
+            return "redirect:/travels";
+        }
+    }
+
     // Delete
     @DeleteMapping("/{id}/delete")
     public String destroy(@PathVariable("id") Long id) {
