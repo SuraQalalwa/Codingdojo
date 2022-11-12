@@ -6,6 +6,7 @@ import com.projectmanager.mvc.repositories.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -43,6 +44,13 @@ public class ProjectService {
     public void deleteProject(Long id) {
         projectRepository.deleteById(id);
     }
+
+//    public void addUserToProject(User projectuser) {
+//        if(this.Users.equals(null)) {
+//            this.users=new ArrayList<User>();
+//        }
+//        this.projectUsers.add(projectuser);
+//    }
 
 }
 

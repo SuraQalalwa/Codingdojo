@@ -27,7 +27,7 @@
     <tbody>
     <c:forEach var="project" items="${userNotLeader}">
         <tr>
-            <c:if test="${project.teamlead.id != userp.id}">
+            <c:if test="${project.teamlead.id != currentUser.id}">
             <td><a href="/showproject/${project.id}">${project.title}</a></td>
             <td>${project.teamlead.userName}</td>
             <td>${project.duedate}</td>
@@ -35,6 +35,8 @@
             </c:if>
         </tr>
     </c:forEach>
+
+
     </tbody>
 </table>
 <h4>Your Projects</h4>
@@ -54,12 +56,14 @@
             <td><a href="/showproject/${userp.id}">${userp.title}</a></td>
             <td>${userp.teamlead.userName}</td>
             <td>${userp.duedate}</td>
-            <c:if test="${userp.teamlead.id != userp.id}">
-            <td><a href="/projects/leave/${userp.id}">Leave Team</a></td>
-            </c:if>
-            <c:if test="${userp.teamlead.id == userp.id}">
+            <c:choose>
+            <c:when test="${userp.teamlead.id == currentUser.id}">
             <td><a href="/projects/edit/${userp.id}">Edit</a></td>
-            </c:if>
+            </c:when>
+            <c:otherwise>
+            <td><a href="/projects/leave/${userp.id}">Leave Team</a></td>
+            </c:otherwise>
+            </c:choose>
         </tr>
     </c:forEach>
     </tbody>
@@ -68,3 +72,5 @@
 <a href="/projects/new">+ new Project</a>
 </body>
 </html>
+/// validation when adding project
+/// edit does not work

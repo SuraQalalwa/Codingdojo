@@ -58,6 +58,7 @@ public class HomeController {
         if ((session.getAttribute("userId") != null)) {
             Long userId = (Long) session.getAttribute("userId");
             User currentUser = userServ.findById(userId);
+            project.setTeamlead(currentUser);
             model.addAttribute("currentUser", currentUser);
             return "newProject.jsp";
         }
@@ -76,7 +77,6 @@ public class HomeController {
                 project.setTeamlead(currentUser);
                 projectService.createProject(project);
             }
-            System.out.println(project.getDuedate());
             return "redirect:/projects/new";
         }
     }

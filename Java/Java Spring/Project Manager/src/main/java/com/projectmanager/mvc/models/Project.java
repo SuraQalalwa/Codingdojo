@@ -20,7 +20,6 @@ public class Project {
     @NotEmpty
     @Size(min = 3)
     private String description;
-
     @Future(message = "Date must be in present")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date duedate;
