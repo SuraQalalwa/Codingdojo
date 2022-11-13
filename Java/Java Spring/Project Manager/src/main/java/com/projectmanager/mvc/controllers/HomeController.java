@@ -53,6 +53,7 @@ public class HomeController {
         session.setAttribute("userId", user.getId());
         return "redirect:/home";
     }
+    ///////////////////////////////////////////////////////
     @GetMapping("/projects/new")
     public String newProject(@ModelAttribute("Project") Project project, Long id, HttpSession session , Model model) {
         if ((session.getAttribute("userId") != null)) {
@@ -103,10 +104,7 @@ public class HomeController {
             Project thisproject = projectService.findProjectById(prid);
             currentUser.getProjects().add(thisproject);
             userServ.updateUser(currentUser);
-            model.addAttribute("userNotLeader", projectService.projectNotLeader(currentUser));
-            model.addAttribute("userLeader", projectService.projectLeader(currentUser));
-            model.addAttribute("currentUser", currentUser);
-
+            projectService.update(thisproject);
         }
         return "redirect:/home";
 
@@ -119,9 +117,6 @@ public class HomeController {
             Project thisproject = projectService.findProjectById(prid);
             currentUser.getProjects().remove(thisproject);
             userServ.updateUser(currentUser);
-            model.addAttribute("userNotLeader", projectService.projectNotLeader(currentUser));
-            model.addAttribute("userLeader", projectService.projectLeader(currentUser));
-            model.addAttribute("currentUser", currentUser);
 
         }
         return "redirect:/home";
@@ -130,12 +125,10 @@ public class HomeController {
     @GetMapping ("/projects/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model,HttpSession session,@ModelAttribute("project") Project project) {
         if ((session.getAttribute("userId") != null)) {
-            project = projectService.findProjectById(id);
             Long userId = (Long) session.getAttribute("userId");
             User currentUser = userServ.findById(userId);
-            model.addAttribute("userNotLeader", projectService.projectNotLeader(currentUser));
-            model.addAttribute("userLeader", projectService.projectLeader(currentUser));
-            model.addAttribute("project", project);
+            Project thisproject = projectService.findProjectById(id);
+            model.addAttribute("project", thisproject);
             return "edit.jsp";
         }
         else {
@@ -149,6 +142,7 @@ public class HomeController {
             Long userId = (Long) session.getAttribute("userId");
             User currentUser = userServ.findById(userId);
             updateproject.setTeamlead(currentUser);
+//            currentUser.getProjects().add(updateproject);
             projectService.update(updateproject);
         }
         return "redirect:/home";

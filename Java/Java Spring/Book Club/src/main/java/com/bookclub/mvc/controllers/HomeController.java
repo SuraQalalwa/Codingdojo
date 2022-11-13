@@ -7,6 +7,7 @@ import com.bookclub.mvc.models.LoginUser;
 import com.bookclub.mvc.models.User;
 import com.bookclub.mvc.sercvises.BookService;
 import com.bookclub.mvc.sercvises.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,14 +19,10 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-
+    @Autowired
     private UserService userServ;
+    @Autowired
     private BookService bookService;
-
-    public HomeController(UserService userServ, BookService bookService) {
-        this.userServ = userServ;
-        this.bookService = bookService;
-    }
 
     /////////////////LogIn & Registeration//////////////////////
     @GetMapping("/")
@@ -69,6 +66,9 @@ public class HomeController {
             List<Book> books = bookService.allBook();
             model.addAttribute("books", books);
             model.addAttribute("currentUser", currentUser);
+            model.addAttribute("userNotborrow", bookService.unborrowedBooks(currentUser));
+            model.addAttribute("userborrow", bookService.borrowedBooks(currentUser));
+            model.addAttribute("currentUser", currentUser);
             return "home.jsp";
         }
         return "redirect:/";
@@ -89,13 +89,16 @@ public class HomeController {
     @PostMapping("/books/new")
     public String addBook(@Valid @ModelAttribute("Book") Book book, Model model, BindingResult result, HttpSession session) {
         if (result.hasErrors()) {
-            return "/home";
+            return "redirect:/home";
         } else {
             if ((session.getAttribute("userId") != null)) {
                 Long userId = (Long) session.getAttribute("userId");
                 User currentUser = userServ.findById(userId);
-                book.setUser(currentUser);
+                book.setBorrower(currentUser);
                 bookService.createBook(book);
+                model.addAttribute("userNotborrow", bookService.unborrowedBooks(currentUser));
+                model.addAttribute("userborrow", bookService.borrowedBooks(currentUser));
+                model.addAttribute("currentUser", currentUser);
             }
             return "redirect:/books/new";
         }
@@ -107,21 +110,21 @@ public class HomeController {
     }
     @GetMapping("/showbook/{bookid}")
     public String showBook(@PathVariable(value = "bookid") Long id, Model model ){
-        Book thisbook= bookService.finadById(id);
+        Book thisbook= bookService.findById(id);
         model.addAttribute("thisbook", thisbook);
         return "showbook.jsp";
     }
-    @GetMapping("/delete/{id}")
-    public String destroy(@PathVariable("id") Long id, HttpSession session) {
-        if ((session.getAttribute("userId") == bookService.finadById(id).getUser().getId())) {
+    @GetMapping("/delete/{bookid}")
+    public String destroy(@PathVariable("bookid") Long id, HttpSession session) {
+        if ((session.getAttribute("userId") == bookService.findById(id).getUser().getId())) {
             bookService.deleteBook(id);
         }
         return "redirect:/home";
     }
     @GetMapping ("/books/{id}/edit")
-    public String edit(@PathVariable("id") Long id, Model model,HttpSession session) {
-        if ((session.getAttribute("userId") == bookService.finadById(id).getUser().getId())) {
-            Book book = bookService.finadById(id);
+    public String edit(@PathVariable("id") Long id, Model model,HttpSession session,@ModelAttribute("book") Book updatebook) {
+        if ((session.getAttribute("userId") == bookService.findById(id).getUser().getId())) {
+            Book book = bookService.findById(id);
             model.addAttribute("book", book);
             return "editpage.jsp";
         }
@@ -130,16 +133,36 @@ public class HomeController {
         }
     }
     @PostMapping("/books/{id}")
-    public String update(@Valid @ModelAttribute("book") Book book, BindingResult result,
-                         @PathVariable("id")Long id) {
-        if (result.hasErrors()) {
-            return "editpage.jsp";
+    public String update(@Valid @ModelAttribute("book") Book updatebook, BindingResult result,
+                         @PathVariable("id")Long id, HttpSession session) {
+        if ((session.getAttribute("userId") == bookService.findById(id).getUser().getId())) {
+            Long userId = (Long) session.getAttribute("userId");
+            User currentUser = userServ.findById(userId);
+            updatebook.setUser(currentUser);
+            bookService.updateBook(updatebook);
+
         }
-        else {
-            bookService.updateBook(book, id);
             return "redirect:/showbook/"+id;
         }
+    @RequestMapping("/borrow/{prid}")
+    public String borrowbook(@PathVariable(value = "prid") Long prid, HttpSession session, Model model) {
+        if ((session.getAttribute("userId") != null)) {
+            Long userId = (Long) session.getAttribute("userId");
+            User currentUser = userServ.findById(userId);
+            Book thisbook = bookService.findById(prid);
+            bookService.addBorrower(thisbook,currentUser);
+            currentUser.getBooks().add(thisbook);
+            userServ.updateUser(currentUser);
+            model.addAttribute("userNotborrow", bookService.unborrowedBooks(currentUser));
+            model.addAttribute("userborrow", bookService.borrowedBooks(currentUser));
+            model.addAttribute("currentUser", currentUser);
+
+        }
+        return "redirect:/home";
+
     }
 
-}
+    }
+
+
 

@@ -17,6 +17,7 @@ public class route {
     public String Gold(HttpSession session, Model model) {
 //
         if (session.getAttribute("gold") == null) {
+            session.setAttribute("color","");
             ArrayList<String> activityList = new ArrayList<String>();
             session.setAttribute("gold", 0);
             session.setAttribute("activities",activityList);
@@ -56,8 +57,15 @@ public class route {
             int x = (int) session.getAttribute("gold");
             int randomNum = rNumber.nextInt(100) - 50;
             int sum = x + randomNum;
+            String color = "";
+            if(randomNum > 0){
+                session.setAttribute("color", "green");
+                session.setAttribute("" +
+                        "", sum);
+                list.add("You entered quest and earned "+randomNum+" gold.");
+            }
             session.setAttribute("gold", sum);
-            list.add("You entered quest and earned "+randomNum+" gold.");
+            list.add("You entered quest and lost "+randomNum+" gold.");
         }
 
             return "redirect:/";

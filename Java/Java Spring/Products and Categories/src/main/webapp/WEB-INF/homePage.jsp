@@ -25,18 +25,12 @@
     </tr>
     </thead>
     <tbody>
-
-
         <tr>
-
             <td>
                 <c:forEach var="product" items="${products}">
                 <a href="/product/${product.id}"><c:out value="${product.name}"></c:out><a/>
                     </c:forEach>
             </td>
-
-
-
             <td>
                 <c:forEach var="category" items="${categories}">
                 <a href="/category/${category.id}"><c:out value="${category.name}"></c:out><a/>

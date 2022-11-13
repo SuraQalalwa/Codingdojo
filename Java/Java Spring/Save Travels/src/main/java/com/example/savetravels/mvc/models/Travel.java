@@ -37,6 +37,18 @@ public class Travel {
 
     }
 
+    @Override
+    public String toString() {
+        return "Travel{" +
+                "id=" + id +
+                ", expense='" + expense + '\'' +
+                ", vendor='" + vendor + '\'' +
+                ", amount=" + amount +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
+
 
     // other getters and setters removed for brevity
     @PrePersist

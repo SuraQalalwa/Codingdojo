@@ -20,29 +20,27 @@ public class ProjectService {
     public Project createProject(Project b) {
         return projectRepository.save(b);
     }
-    public Project findProject(Long id) {
-        return this.projectRepository.findById(id).orElse(null);
-    }
+//    public Project findProject(Long id) {
+//        return this.projectRepository.findById(id).orElse(null);
+//    }
 
     public Project findProjectById(Long id) {
         return projectRepository.findProjectById(id);
     }
-    public List<Project> projectLeader(User user){
-        return projectRepository.findAllByUsers(user);
-
-    }
-
     public Project update(Project thisProject) {
         return projectRepository.save(thisProject);
+    }
+    public void deleteProject(Long id) {
+        projectRepository.deleteById(id);
     }
 
     public List<Project> projectNotLeader(User user){
         return projectRepository.findAllByUsersNotContains(user);
     }
 
+    public List<Project> projectLeader(User user){
+        return projectRepository.findAllByUsers(user);
 
-    public void deleteProject(Long id) {
-        projectRepository.deleteById(id);
     }
 
 //    public void addUserToProject(User projectuser) {

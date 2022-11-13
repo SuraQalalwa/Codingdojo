@@ -27,7 +27,8 @@ public class BookService {
         Optional<Book> optionalBook = bookRepository.findById(id); // optional since it may not find nothing and to do not have error
         if(optionalBook.isPresent()) {
             return optionalBook.get();
-        } else {
+        }
+        else {
             return null;
         }
     }
@@ -53,5 +54,5 @@ public class BookService {
 }
 // find all
 // find by id
-// greate
+// create
 //update all by defult in all services

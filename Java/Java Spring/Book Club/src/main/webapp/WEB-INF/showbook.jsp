@@ -23,7 +23,7 @@
     <p>${thisbook.thought} </p>
 
 </div>
-<a href="/books/${thisbook.id}/edit">Edit</a>
-<a href="/delete/${thisbook.id}">Delete</a>
+<%--<a href="/books/${thisbook.id}/edit">Edit</a>--%>
+<%--<a href="/delete/${thisbook.id}">Delete</a>--%>
 </body>
 </html>

@@ -52,7 +52,7 @@
     <h3>Activities:</h3>
     <textarea name="activities" rows="6" cols="50" readonly>
         <c:forEach var="activity" items="${activities}">
-        <c:out value="${activity}"></c:out>
+        <c:out > <p class="${color}" value="${activity}"></p></c:out>
         </c:forEach>
         </textarea>
 </div>

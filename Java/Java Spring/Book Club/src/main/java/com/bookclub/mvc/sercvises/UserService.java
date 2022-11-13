@@ -62,4 +62,8 @@ public class UserService {
     public User allUsers(){
         return (User) userRepo.findAll();
     }
+
+    public User updateUser(User currentUser) {
+        return userRepo.save(currentUser);
+    }
 }

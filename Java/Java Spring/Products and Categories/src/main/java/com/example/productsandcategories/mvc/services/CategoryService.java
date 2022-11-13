@@ -12,10 +12,6 @@ import java.util.List;
 public class CategoryService {
     private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
-
-
-
-
     public CategoryService(CategoryRepository categoryRepository, ProductRepository productRepository) {
         this.categoryRepository = categoryRepository;
         this.productRepository = productRepository;

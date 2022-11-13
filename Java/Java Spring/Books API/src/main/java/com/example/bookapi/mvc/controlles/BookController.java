@@ -21,7 +21,6 @@ public class BookController {
     public BookController(BookService bookService){
         this.bookService = bookService;
     }
-
     @GetMapping("/books")
     public String allBook(Model model){
         List<Book> Book = bookService.allBooks();
