@@ -35,6 +35,7 @@
         <form:errors path="thought"/>
         <form:input path="thought" />
     </div>
+    
     <input type="submit" value="Submit"/>
 </form:form>
 </body>

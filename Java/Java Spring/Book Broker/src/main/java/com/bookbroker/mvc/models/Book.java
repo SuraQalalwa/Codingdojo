@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
+
 @Data
 @Entity
 @Table(name="books")
@@ -32,5 +33,11 @@ public class Book {
 
     public Book() {
 
+    }
+    public void addUserToBook(User currentUser) {
+        if (this.postedby==null){
+            this.postedby= new User();
+        }
+        this.postedby.add(currentUser);
     }
 }

@@ -43,4 +43,7 @@ public class User {
     public User() {
 
     }
+
+    public void add(User currentUser) {
+    }
 }

@@ -131,33 +131,34 @@ public class HomeController {
     }
     @GetMapping("/delete/{bookid}")
     public String destroy(@PathVariable("bookid") Long id, HttpSession session) {
-        if ((session.getAttribute("userId") == bookService.findById(id).getBorrowedby().getId())) {
+        if ((session.getAttribute("userId") != null)) {
             bookService.deleteBook(id);
         }
         return "redirect:/home";
     }
     @GetMapping ("/edit/{id}")
-    public String edit(@PathVariable("id") Long id, Model model,HttpSession session,@ModelAttribute("book") Book updatebook) {
-        if ((session.getAttribute("userId") == bookService.findById(id).getBorrowedby().getId())) {
+    public String edit(@PathVariable("id") Long id, Model model,HttpSession session) {
+        if (session.getAttribute("userId") != null) {
             Book book = bookService.findById(id);
             model.addAttribute("book", book);
             return "editpage.jsp";
         }
         else {
-            return "redirect:/showbook/"+id;
+            return "redirect:/home";
         }
     }
     @PostMapping("/books/{id}")
     public String update(@Valid @ModelAttribute("book") Book updatebook, BindingResult result,
                          @PathVariable("id")Long id, HttpSession session) {
-        if ((session.getAttribute("userId") == bookService.findById(id).getBorrowedby().getId())) {
+        if (session.getAttribute("userId") != null) {
             Long userId = (Long) session.getAttribute("userId");
             User currentUser = userServ.findById(userId);
-            updatebook.setBorrowedby(currentUser);
+            updatebook.setPostedby(currentUser);
+//            updatebook.addUserToBook(currentUser);
             bookService.updateBook(updatebook);
 
         }
-        return "redirect:/showbook/"+id;
+        return "redirect:/home";
     }
     @GetMapping("/logout")
     public String logout(HttpSession session) {
