@@ -27,12 +27,12 @@
     <tbody>
     <c:forEach var="project" items="${userNotLeader}">
         <tr>
-            <c:if test="${project.teamlead.id != currentUser.id}">
+
             <td><a href="/showproject/${project.id}">${project.title}</a></td>
             <td>${project.teamlead.userName}</td>
             <td>${project.duedate}</td>
             <td><a href="/projects/join/${project.id}">Join Team</a></td>
-            </c:if>
+
         </tr>
     </c:forEach>
 

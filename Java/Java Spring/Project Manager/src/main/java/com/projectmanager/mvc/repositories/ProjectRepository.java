@@ -14,6 +14,6 @@ public interface ProjectRepository extends CrudRepository<Project, Long> {
     List<Project> findAll();
     Project findProjectById(Long id);
     List<Project> findAllByUsers(User user);
-    List<Project> findAllByUsersNotContains(User user);
+    List<Project> findByUsersNotContains(User user);
 
 }

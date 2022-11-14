@@ -35,7 +35,7 @@ public class ProjectService {
     }
 
     public List<Project> projectNotLeader(User user){
-        return projectRepository.findAllByUsersNotContains(user);
+        return projectRepository.findByUsersNotContains(user);
     }
 
     public List<Project> projectLeader(User user){

@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -40,5 +41,12 @@ public class Project {
 
     public Project() {
 
+    }
+
+    public void addUserToProject(User currentUser) {
+        if (this.users==null){
+            this.users=new ArrayList<User>();
+        }
+        this.users.add(currentUser);
     }
 }

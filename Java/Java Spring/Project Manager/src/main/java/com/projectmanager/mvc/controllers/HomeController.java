@@ -142,7 +142,7 @@ public class HomeController {
             Long userId = (Long) session.getAttribute("userId");
             User currentUser = userServ.findById(userId);
             updateproject.setTeamlead(currentUser);
-//            currentUser.getProjects().add(updateproject);
+            updateproject.addUserToProject(currentUser);
             projectService.update(updateproject);
         }
         return "redirect:/home";
