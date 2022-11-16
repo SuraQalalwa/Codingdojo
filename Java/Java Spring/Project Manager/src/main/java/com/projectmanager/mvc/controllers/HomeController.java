@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -68,15 +69,19 @@ public class HomeController {
         }
     }
     @PostMapping("/projects/new")
-    public String addProject(@Valid @ModelAttribute("Project") Project project, Model model, BindingResult result, HttpSession session) {
+    public String addProject(@Valid @ModelAttribute("Project") Project project, BindingResult result, HttpSession session) {
         if (result.hasErrors()) {
-            return "/home";
+            return "newProject.jsp";
         } else {
             if ((session.getAttribute("userId") != null)) {
                 Long userId = (Long) session.getAttribute("userId");
                 User currentUser = userServ.findById(userId);
+                List<User> user = new ArrayList<User>();
+                user.add(currentUser);
                 project.setTeamlead(currentUser);
                 projectService.createProject(project);
+
+
             }
             return "redirect:/projects/new";
         }
@@ -141,20 +146,21 @@ public class HomeController {
         if ((session.getAttribute("userId") != null)) {
             Long userId = (Long) session.getAttribute("userId");
             User currentUser = userServ.findById(userId);
+            Project project = projectService.findProject(id);
             updateproject.setTeamlead(currentUser);
-            updateproject.addUserToProject(currentUser);
+            List<User> projectsuser = project.getUsers();
+//            updateproject.addUserToProject(currentUser);
+            updateproject.setUsers(projectsuser);
             projectService.update(updateproject);
         }
         return "redirect:/home";
     }
-
     @GetMapping("/showproject/{projectid}")
     public String showProject(@PathVariable(value = "projectid") Long id, Model model ){
         Project thisproject= projectService.findProjectById(id);
         model.addAttribute("thisproject", thisproject);
         return "showproject.jsp";
     }
-
     @GetMapping("/delete/{id}")
     public String destroy(@PathVariable("id") Long id, HttpSession session) {
         if ((session.getAttribute("userId") != null)) {
@@ -162,7 +168,6 @@ public class HomeController {
         }
         return "redirect:/home";
     }
-
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();

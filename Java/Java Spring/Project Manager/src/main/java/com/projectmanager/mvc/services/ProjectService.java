@@ -20,9 +20,9 @@ public class ProjectService {
     public Project createProject(Project b) {
         return projectRepository.save(b);
     }
-//    public Project findProject(Long id) {
-//        return this.projectRepository.findById(id).orElse(null);
-//    }
+    public Project findProject(Long id) {
+        return this.projectRepository.findById(id).orElse(null);
+    }
 
     public Project findProjectById(Long id) {
         return projectRepository.findProjectById(id);

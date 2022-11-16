@@ -13,8 +13,6 @@
     <title>Project Manager</title>
 </head>
 <body>
-<%--<h1>Book Club</h1>--%>
-<%--<p>A place for friends to share thoughts on books</p>--%>
 <%--@elvariable id="newUser" type=""--%>
 <form:form action="/register" method="post" modelAttribute="newUser">
     <h1>Registration</h1>
